@@ -1,0 +1,52 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background:url("https://img.wallpapersafari.com/desktop/1680/1050/14/0/Ly2aDt.jpg");
+  }
+  
+  header {
+    background-color:white;
+    color: #0e0d0d;
+    text-align: center;
+    font-family: 'Trirong', serif;
+    padding: 10px;
+  }
+  
+  input {
+    width: 75%;
+  }
+  
+  #city-list {
+    width: 22rem;
+  }
+  
+  #city-date-icon,
+  #city-name,
+  #current-icon {
+      display: flex;
+      flex-direction: row;
+      justify-content: center/space-around/space-between;
+  }
+
+  .container {
+    background-color: white;
+    margin-top: 25px;
+    border-radius: 2%;
+  }
+  
+  h6 {
+    font-weight: bold;
+  }
+  
+  h4 {
+      margin: 5px;
+  }
+  
+  #forecast-cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: center/space-between;
+  }
+  
+  .forecast {
+      margin: 10px;
+  }
