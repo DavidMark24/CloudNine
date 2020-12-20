@@ -19,3 +19,30 @@ function createCityList(citySearchList) {
     $("#city-list").append(cityListEntry);
   }
 }
+
+// Function for getting the temputure for the cities searched
+
+function populateCityWeather(city, citySearchList) {
+  createCityList(citySearchList);
+
+  var queryURL =
+    "https://api.openweathermap.org/data/2.5/weather?&units=imperial&appid=9f76e5a9b2317e732988a80585a9417e&q=" +
+    city;
+
+  var queryURL2 =
+    "https://api.openweathermap.org/data/2.5/forecast?&units=imperial&appid=9f76e5a9b2317e732988a80585a9417e&q=" +
+    city;
+
+  var latitude;
+
+  var longitude;
+
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  })
+    // Store all of the retrieved data inside of an object called "weather"
+
+    .then(function (weather) {}
+     
+  
