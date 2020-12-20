@@ -89,14 +89,13 @@ function populateCityWeather(city, citySearchList) {
         // Store all of the retrieved data inside of an object called "uvIndex"
 
       }).then(function (uvIndex) {
-        console.log(uvIndex);
-
+        
         var uvIndexDisplay = $("<button>");
         uvIndexDisplay.addClass("btn btn-danger");
 
         $("#current-uv").text("UV Index: ");
         $("#current-uv").append(uvIndexDisplay.text(uvIndex[0].value));
-        console.log(uvIndex[0].value);
+        
 
         $.ajax({
           url: queryURL2,
@@ -105,10 +104,7 @@ function populateCityWeather(city, citySearchList) {
           // Store all of the retrieved data inside of an object called "forecast"
 
         }).then(function (forecast) {
-          console.log(queryURL2);
-
-          console.log(forecast);
-
+         
           // Loop through the forecast list array and display a single forecast entry/time (5th entry of each day which is close to the highest temp/time of the day) from each of the 5 days
          
           for (var i = 6; i < forecast.list.length; i += 8) {
@@ -116,8 +112,6 @@ function populateCityWeather(city, citySearchList) {
             var forecastDate = $("<h5>");
 
             var forecastPosition = (i + 2) / 8;
-
-            console.log("#forecast-date" + forecastPosition);
 
             $("#forecast-date" + forecastPosition).empty();
             $("#forecast-date" + forecastPosition).append(
@@ -134,8 +128,6 @@ function populateCityWeather(city, citySearchList) {
 
             $("#forecast-icon" + forecastPosition).empty();
             $("#forecast-icon" + forecastPosition).append(forecastIcon);
-
-            console.log(forecast.list[i].weather[0].icon);
 
             $("#forecast-temp" + forecastPosition).text(
               "Temp: " + forecast.list[i].main.temp + " °F"
@@ -173,6 +165,7 @@ $(document).ready(function () {
     var city = $("#city-input").val().trim().toLowerCase();
 
     if (city != "") {
+      
       //Check to see if there is any text entered
 
       citySearchList[city] = true;
